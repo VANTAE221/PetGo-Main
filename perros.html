@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>PetGo</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo-titulo">
+                <a href="index.html">
+                    <img src="logo-removebg-preview.png" alt="">
+                    <h1>PetGo</h1>
+                </a>
+            </div>
+            <nav id="nav"> 
+                <a href="index.html" class="selected">Inicio</a>
+                <a href="perros.html" class="selected">Perros</a>
+                <a href="gatos.html" class="selected">Gatos</a>
+            </nav>
+            <div class="carrito">
+                <span class="total-compras">$20,000</span>
+                <a href="carrito.html">
+                    <span class="icono-carrito">
+                        <i class="fa fa-shopping-cart"></i>
+                        <div class="total-item-carrito">
+                            1
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </header>
+
+        <!--INICIO-->
+        <section class="contenedor-seccion">
+            <div class="fondo - seccion"></div>
+        <section id="inicio" class="inicio">
+        
+            <div class="col">
+                <h2 class="titulo-inicio">¡Todo lo que tu perro quiere <br>en PetGo lo tienes!</h2>
+                <div class="buscador">
+                    <input type="text" placeholder="Que estas buscando">
+                    <span class="btn-buscador">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+                <div class="col derecha">
+                      <div class="contenedor-img">
+                        <img src="img perro.png" width="320px">
+                      </div>  
+                </div>
+        </section>
+        
+ 
+     <!-- Categorías -->
+<section class="categorias">
+    <h2>Categorías</h2>
+    <div class="categorias-contenido">
+        <div class="categoria">
+            <a href="perros.html">
+                <img src="Rectangle 4.png" alt="Perros">
+                <p>Perros</p>
+            </a>
+        </div>
+
+        <div class="categoria">
+            <a href="gatos.html">
+                <img src="Rectangle 5.png" alt="Gatos">
+                <p>Gatos</p>
+            </a>
+        </div>
+
+        <div class="categoria">
+            <a href="kits.html">
+                <img src="Rectangle_6-removebg-preview.png" alt="Kit´s">
+                <p>Kit´s</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SECCION PRODUCTOS -->
+<br><br><br><section id="productos" class="productos">
+    <div class="fila">
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Baño en seco para perros', 10000, 'baño en seco.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo orange">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="baño en seco.png" alt="">
+                    <h2>Baño en seco para perros</h2>
+                    <h2>$10.000</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Pañoletas', 7000, 'PERRO/pañoleta.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo blue">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/pañoleta.png" alt="">
+                    <h2>Pañoletas</h2>
+                    <h2>$7.000</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Comedero', 14000, 'PERRO/comedero.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo green">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/comedero.png" alt="">
+                    <h2>Comedero</h2>
+                    <h2>$14.000</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="fila">
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Pelota de nudos', 8000, 'PERRO/PELOTA DE NUDO.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo orange">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/PELOTA DE NUDO.png" alt="">
+                    <h2>Pelota de nudos</h2>
+                    <h2>$8.000</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Hueso de juguete', 6000, 'PERRO/hueso de juguete.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo blue">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/hueso de juguete.png" alt="">
+                    <h2>Hueso de juguete</h2>
+                    <h2>$6.000</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Guacal', 75000, 'PERRO/guacal.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo green">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/guacal.png" alt="">
+                    <h2>Guacal</h2>
+                    <h2>$75.000</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="fila">
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Comida seca para perro', 20000, 'comida para perro.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo orange">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="comida para perro.png" alt="">
+                    <h2>Comida seca para perro</h2>
+                    <h2>$20.000</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Cama para perro', 35000, 'PERRO/CAMA.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo blue">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/CAMA.png" alt="">
+                    <h2>Cama para perro</h2>
+                    <h2>$35.000</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="col fondo-dots">
+            <header>
+                <span class="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                <span class="cart" onclick="agregarAlCarrito('Dulces para perro', 8000, 'PERRO/DULCE.png')">
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </span>
+            </header>
+            <a href="#">
+                <div class="contenido">
+                    <div class="fondo green">
+                        <div class="circulo"></div>
+                    </div>
+                    <img src="PERRO/DULCE.png" alt="">
+                    <h2>Dulces para perro</h2>
+                    <h2>$8.000</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</section>
+</div>
+
+
+   
+
+<!-- Script to handle adding products to cart -->
+<script>
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    function agregarAlCarrito(nombre, precio, imagen) {
+        const producto = { nombre, precio, imagen, cantidad: 1 };
+        const index = carrito.findIndex(item => item.nombre === nombre);
+        if (index !== -1) {
+            carrito[index].cantidad++;
+        } else {
+            carrito.push(producto);
+        }
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarTotal();
+        alert(`Producto agregado: ${nombre}`);
+    }
+
+    function actualizarTotal() {
+        const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+        document.querySelector('.total-compras').textContent = `$${total}`;
+        document.querySelector('.total-item-carrito').textContent = carrito.length;
+    }
+
+    actualizarTotal();
+</script>
+
+<footer>
+    <div class="contacto">
+        <h3>Contáctanos</h3>
+        <p><i class="fa fa-envelope" aria-hidden="true"></i> Correo: cvbjearanop@unadvirtual.edu.co</p>
+        <p><i class="fa fa-phone" aria-hidden="true"></i> Número: 3142520692</p>
+        <p>© 2024 Chirly Vanessa Bejarano Parra. Todos los derechos resrvados.</p>
+    </div>
+</footer>
+
+
+<script>
+    // Función para manejar el clic en el icono de "like"
+    document.querySelectorAll('.like').forEach(likeButton => {
+        likeButton.addEventListener('click', function () {
+            this.classList.toggle('liked');
+        });
+    });
+</script>
+
+
+</section> <!-- DEL INICIO -->
+</div>
+</body>
+</html>

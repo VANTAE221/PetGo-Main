@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+
+    <title>PetGo</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo-titulo">
+                <a href="index.html">
+                    <img src="logo-removebg-preview.png" alt="">
+                    <h1>PetGo</h1>
+                </a>
+            </div>
+            <nav id="nav"> 
+                <a href="index.html" class="selected">Inicio</a>
+                <a href="perros.html" class="selected">Perros</a>
+                <a href="gatos.html" class="selected">Gatos</a>
+            </nav>
+            
+            <div class="carrito">
+                <span class="total-compras">$0</span>
+                <a href="carrito.html">
+                    <span class="icono-carrito">
+                        <i class="fa fa-shopping-cart"></i>
+                        <div class="total-item-carrito">0</div>
+                    </span>
+                </a>
+            </div>
+        </header>
+
+        <!--INICIO-->
+        <section class="contenedor-seccion">
+            <div class="fondo - seccion"></div>
+            <section id="inicio" class="inicio">
+                <div class="col">
+                    <h2 class="titulo-inicio">Encuentra los mejores productos <br>para tu mascota al mejor precio</h2>
+                    <div class="buscador">
+                        <input type="text" placeholder="Que estas buscando">
+                        <span class="btn-buscador">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="col derecha">
+                    <div class="contenedor-img">
+                        <img src="sin fondo gato.png" width="320px">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Carrito -->
+        <section id="carrito" class="carrito">
+            <h2>Carrito de Compras</h2>
+            <table id="carrito-productos">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="total-compra">Total: $0</div>
+            <button id="comprar">Comprar</button>
+        </section>
+    </div>
+
+    <!-- Script to handle cart operations -->
+    <script>
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        function actualizarCarrito() {
+            const productosCarrito = document.querySelector('#carrito-productos tbody');
+            productosCarrito.innerHTML = '';
+            let totalCompra = 0;
+
+            carrito.forEach((producto, index) => {
+                const itemHTML = `
+                    <tr class="producto">
+                        <td><img src="${producto.imagen}" alt="${producto.nombre}" width="50"></td>
+                        <td>${producto.nombre}</td>
+                        <td>$${producto.precio}</td>
+                        <td>${producto.cantidad}</td>
+                        <td><button onclick="eliminarProducto(${index})">Eliminar</button></td>
+                    </tr>
+                `;
+                productosCarrito.innerHTML += itemHTML;
+                totalCompra += producto.precio * producto.cantidad;
+            });
+
+            document.getElementById('total-compra').textContent = `Total: $${totalCompra}`;
+        }
+
+        function eliminarProducto(index) {
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad -= 1; // Reducir la cantidad en 1
+            } else {
+                carrito.splice(index, 1); // Eliminar el producto si la cantidad es 1
+            }
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarCarrito();
+        }
+
+        document.getElementById('comprar').addEventListener('click', () => {
+            if (carrito.length > 0) {
+                alert('Compra realizada con éxito');
+                carrito = [];
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                actualizarCarrito();
+            } else {
+                alert('El carrito está vacío');
+            }
+        });
+
+        window.onload = actualizarCarrito;
+    </script>
+
+<footer>
+    <div class="contacto">
+        <h3>Contáctanos</h3>
+        <p><i class="fa fa-envelope" aria-hidden="true"></i> Correo: cvbjearanop@unadvirtual.edu.co</p>
+        <p><i class="fa fa-phone" aria-hidden="true"></i> Número: 3142520692</p>
+        <p>© 2024 Chirly Vanessa Bejarano Parra. Todos los derechos resrvados.</p>
+    </div>
+</footer>
+
+
+
+
+
+</body>
+</html>
